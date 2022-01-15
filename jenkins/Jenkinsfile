@@ -2,8 +2,15 @@ pipeline{
 	agent any
 	environment{
 something = '1.0.0'
+
 		secret = credentials('server-password')
+
 }
+parameters{
+   choice(name:'VERSION', choices:['1.1.0','1.2.0','1.3.0'], description:'')
+   booleanParam(name: 'executeTests', defaultValue:true, description:'') 
+}
+
 	stages{
 		stage("build"){
 			steps {
@@ -13,10 +20,19 @@ something = '1.0.0'
 		}
 		stage("test"){
 		    steps{
+		    when{
+		        expression{
+		            
+		            params.executeTests
+		        }
+
+		    }
+
 		        echo 'testing app'
 			    echo "Branch name: ${GIT_BRANCH}"
 			    input('CONTINUE?')
 			    echo "${secret}"
+
 		        }
 		    }
 
@@ -50,3 +66,6 @@ something = '1.0.0'
 	
 	}
 }
+
+
+
