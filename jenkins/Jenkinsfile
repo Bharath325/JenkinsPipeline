@@ -14,6 +14,7 @@ something = '1.0.0'
 		    steps{
 		        echo 'testing app'
 			    echo "Branch name: ${GIT_BRANCH}"
+			    input('CONTINUE?')
 		        }
 		    }
 
@@ -21,7 +22,6 @@ something = '1.0.0'
 		stage("deploy"){
 		    steps{
 		        echo 'deploying app'
-			    echo "Author ${GIT_AUTHOR_NAME}"
 		    }
 
 		}
