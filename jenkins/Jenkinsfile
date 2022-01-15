@@ -18,7 +18,7 @@ parameters{
 		stage("init"){
 			steps{
 				script{
-					gv =load "script.groovy"
+					gv =load "jenkins/script.groovy"
 				}
 			}
 		
