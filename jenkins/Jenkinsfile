@@ -16,6 +16,7 @@ parameters{
 			steps {
 		    	echo 'building app'
 			echo " User env variable : ${something}"
+			echo "Version can be ${params.VERSION}"
 			}
 		}
 		stage("test"){
