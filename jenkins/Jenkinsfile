@@ -1,14 +1,19 @@
 pipeline{
 	agent any
+	environment{
+something = '1.0.0'
+}
 	stages{
 		stage("build"){
 			steps {
 		    	echo 'building app'
+			echo " User env variable : ${something}"
 			}
 		}
 		stage("test"){
 		    steps{
 		        echo 'testing app'
+			    echo "Branch name: ${GIT_BRANCH}"
 		        }
 		    }
 
