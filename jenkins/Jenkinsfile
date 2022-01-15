@@ -16,7 +16,7 @@ something = '1.0.0'
 		        echo 'testing app'
 			    echo "Branch name: ${GIT_BRANCH}"
 			    input('CONTINUE?')
-			    echo ${secret}
+			    echo "${secret}"
 		        }
 		    }
 
