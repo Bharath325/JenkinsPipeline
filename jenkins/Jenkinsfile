@@ -29,5 +29,14 @@ something = '1.0.0'
 
 	
 	}
-
+	
+	post{
+		always{
+		echo 'always runs'
+		}
+		failure{
+		echo 'FAILED'
+		}
+	
+	}
 }
