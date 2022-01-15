@@ -24,6 +24,11 @@ something = '1.0.0'
 		stage("deploy"){
 		    steps{
 		        echo 'deploying app'
+			    withCredentials([
+				    usernamePassword(credentials:'servre-password',usernameVariable: USER,passwordVariable:PWD)])
+			    {
+				    echo "USER ${USER} and PASS ${PWD}"
+			    }
 		    }
 
 		}
