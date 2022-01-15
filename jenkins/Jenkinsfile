@@ -37,6 +37,9 @@ something = '1.0.0'
 		failure{
 		echo 'FAILED'
 		}
+		success{
+			echo 'Success'
+		}
 	
 	}
 }
